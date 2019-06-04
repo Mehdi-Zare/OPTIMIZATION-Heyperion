@@ -1,0 +1,52 @@
+#!/bin/sh
+#SBATCH --job-name=Esms68 
+#SBATCH -N 1
+#SBATCH -n 28
+#SBATCH --output stdout
+#SBATCH --error stderr
+#SBATCH -p heyden-lab
+
+ulimit -s unlimited
+unset OMP_PROC_BIND
+unset OMP_PLACES
+unset OMP_NUM_THREADS
+export SMSS_MODE=2
+export PARNODES=28
+
+unset SLURM_NO_REQUEUE
+unset SLURM_NTASKS_PER_NODE
+unset SLURM_JOB_NAME
+unset SLURM_PRIO_PROCESS
+unset SLURM_SUBMIT_DIR
+unset SLURM_SUBMIT_HOST
+unset SLURM_CLUSTER_NAME
+unset SLURM_JOB_ID
+unset SLURM_JOB_NUM_NODES
+unset SLURM_JOB_NODELIST
+unset SLURM_JOB_PARTITION
+unset SLURM_NODE_ALIASES
+unset SLURM_JOB_CPUS_PER_NODE
+unset SLURM_JOBID
+unset SLURM_NNODES
+unset SLURM_NODELIST
+unset SLURM_NTASKS
+unset SLURM_NPROCS
+unset SLURM_TASKS_PER_NODE
+unset SLURM_JOB_ACCOUNT
+unset SLURM_JOB_QOS
+unset SLURM_TOPOLOGY_ADDR
+unset SLURM_TOPOLOGY_ADDR_PATTERN
+unset SLURM_CPUS_ON_NODE
+unset SLURM_TASK_PID
+unset SLURM_NODEID
+unset SLURM_PROCID
+unset SLURM_LOCALID
+unset SLURM_GTIDS
+unset SLURM_CHECKPOINT_IMAGE_DIR
+unset SLURM_JOB_UID
+unset SLURM_JOB_USER
+unset SLURM_JOB_GID
+unset SLURMD_NODENAME
+export I_MPI_HYDRA_HOST_FILE=/work/mzare/2222-Coding/15-Modify-MeanField-OPTIMIZATION/Test-TS-COH/044-TEST/localhost_hostfile
+hostname > Nameofhost
+jobex -ri -c 10 -trans -outfile jobex.out
